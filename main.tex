@@ -114,7 +114,7 @@ Tsinghua University \\ % Your institution for the title page
 \section{Introduction} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Problem Description} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\subsection{Background \& Key Information} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
 % ET: 1 min.
@@ -131,16 +131,16 @@ Tsinghua University \\ % Your institution for the title page
 \end{frame}
 
 %------------------------------------------------
-
+\subsection{Hierarchical Structure of ICM}
 \begin{frame}
 \frametitle{Hierarchical Structure of ICM}
 
-
+We assume a relationship between offices and level of positions.
 
 \end{frame}
 
 %------------------------------------------------
-
+\subsection{Task Requirements}
 \begin{frame}
 \frametitle{Task Requirements}
 \begin{columns}[c]
@@ -174,7 +174,7 @@ Tsinghua University \\ % Your institution for the title page
 %------------------------------------------------
 \section{Modeling}
 %------------------------------------------------
-
+\subsection{Difficulties in Modeling the Churn Process}
 \begin{frame}
 \frametitle{Difficulties in Modeling the Churn Process}
 The churn process in ICM is hard to model because:
@@ -191,12 +191,35 @@ Too many assumptions on the employees introduces latent factors, which require s
 \end{frame}
 
 %------------------------------------------------
+\subsection{A Negative Example}
+\begin{frame}
+\frametitle{A Negative Example}
+One example of a model that introduces too much assumptions for the employees:
+\begin{enumerate}
+\item Each person has a tolerance threshold, which measures the amount of (dis)satisfaction needed for he/she to leave the company.
+\item Each month, the employee increases the dissatisfaction value based on churn of other employees, his/her position, and working experience.
+\item If the dissatisfaction value exceeds the threshold, the employee will leave the company next month.
+\end{enumerate}
+Result: the employees will leave at {\bf an exponential rate}!
+\end{frame}
+\subsection{Employee Churn - A Probabilistic Perspective}
 
 \begin{frame}
 \frametitle{Employee Churn - A Probabilistic Perspective}
-
-
+Conclusion: Fewer assumptions are better for simulations!
+\begin{block}{The Beta-Bernoulli Distribution}
+Suppose a random variable $u\in \{0,1\}$ is drawn from a Bernoulli distribution, where $p$ is unknown:
+\begin{equation}
+u \sim \mathrm{Bernoulli}(u;p)=p^u(1-p)^{1-u}
+\end{equation}
+Assume an observer wants to estimate parameter $p$ by drawing multiple $u$'s. The individual has a prior estimation on $p$, which is described as a Beta distribution:
+\begin{equation}
+f(p)\sim \mathrm{Beta}(p;\alpha, \beta) = \frac{p^{\alpha-1}(1-p)^{\beta-1}}{\mathrm{B}(\alpha, \beta)}
+\end{equation}
+\end{block}
 \end{frame}
+
+
 
 %------------------------------------------------
 

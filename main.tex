@@ -170,53 +170,32 @@ Tsinghua University \\ % Your institution for the title page
 \end{columns}
 \end{frame}
 
+
+%------------------------------------------------
+\section{Modeling}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
+\frametitle{Difficulties in Modeling the Churn Process}
+The churn process in ICM is hard to model because:
 \begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
+\item Individually, the churn of the employee is affected by employees around them.
+\item For ICM as a whole, the churn rate should be maintained in a small interval. (eg. around $18\%$)
+\item Employees on different positions might have different churn rates.
+
 \end{enumerate}
 
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+Too many assumptions on the employees introduces latent factors, which require some serious parameter tuning to obtain a good model.
 
-\end{columns}
-\end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+\frametitle{Employee Churn - A Probabilistic Perspective}
+
+
 \end{frame}
 
 %------------------------------------------------

@@ -191,7 +191,6 @@ Too many assumptions on the employees introduces latent factors, which require s
 \end{frame}
 
 %------------------------------------------------
-\subsection{A Negative Example}
 \begin{frame}
 \frametitle{A Negative Example}
 One example of a model that introduces too much assumptions for the employees:
@@ -219,23 +218,37 @@ f(p)\sim \mathrm{Beta}(p;\alpha, \beta) = \frac{p^{\alpha-1}(1-p)^{\beta-1}}{\ma
 \end{block}
 \end{frame}
 
+\begin{frame}
+\frametitle{Employee Churn - A Probablistic Prespective}
+\begin{block}{Estimating $\alpha$ and $\beta$}
+When seeing an outcome of $u=1$, the observer updates the estimation using Bayes' law:
+\begin{equation}
+f(p)\sim (p^{\alpha - 1}(1-p)^{\beta-1})\cdot p
+\end{equation}
+which can be viewed as increasing $\alpha$ by $1$. When the observations reaches infinity, $\alpha/\beta=p$, whereas the Beta distribution reduces to $\delta(u-p)$. Also, the increase of observations reduces the variance of the Beta distribution. Integrating out $p$, the observer can estimate that the mean of $u$ equals $\alpha/(\alpha+\beta)$.
 
-
+\end{block}
+\end{frame}
 %------------------------------------------------
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
+\frametitle{An Analogy}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Reality of an employee             &  Model \\\hline
+\{Leave, Stay\}                    &  $u\in \{0, 1\}$\\
+The true inclination to stay       &  $p$ \\
+The estimated inclination to stay  & $\alpha/(\alpha+\beta)$ \\
+Seeing others leave                & $\beta \uparrow$ \\
+Seeing other stay                  & $\alpha \uparrow$ \\
+Experience in company              & $\alpha + \beta$ \\
+\hline
+\end{tabular}
+\caption{Describing the reality using Beta-Bernoulli distribution}
+\end{table}
 \end{frame}
-
 %------------------------------------------------
 
 \begin{frame}
